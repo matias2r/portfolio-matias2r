@@ -1,0 +1,28 @@
+---
+// src/components/Navbar.astro
+
+---
+
+<nav class="bg-primary shadow-md fixed w-full">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-center items-center h-16">
+      <!-- Logo o nombre del sitio -->
+      <div class="md:hidden flex-shrink-0">
+        <a href="/" class="text-xl font-bold text-white">
+          Matias
+        </a>
+      </div>
+
+      <!-- Menú de navegación (visible en pantallas grandes) -->
+      <div class="hidden md:flex space-x-16">
+        <a href="#top" class="text-white font-semibold">Inicio</a>
+        <a href="#herramientas" class="text-white font-semibold">Herramientas</a>
+        <a href="#jobs" class="text-white font-semibold">Trabajos</a>
+        <a href="#contact" class="text-white font-semibold">Contacto</a>
+      </div>
+
+    </div>
+  </div>
+
+</nav>
+

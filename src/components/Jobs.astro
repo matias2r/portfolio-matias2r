@@ -1,0 +1,70 @@
+
+    <section class="flex flex-col items-center mt-24" id="jobs">
+        <!-- Título de la sección -->
+        <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500 mb-8">
+            Trabajos
+        </h2>
+
+        <!-- Contenedor de las experiencias -->
+        <div id="jobs-container">
+            <!-- Los trabajos se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Script para generar dinámicamente los trabajos -->
+    <script>
+        const jobs = [
+            {
+                id: 1,
+                logo: "/src/assets/liliapp.png",
+                position: "Frontend Developer at LiLiApp Chile",
+                date: "2024 - Presente",
+                description: "Participando en el desarrollo de un StartUp enfocado en una nueva plataforma para profesionales a domicilio, asegurando una experiencia óptima y mejor diseño en la aplicación."
+            },
+            {
+                id: 2,
+                logo: "/src/assets/poolhub.png",
+                position: "Full Stack Developer at Pool Hub Chile",
+                date: "2023 - 2024",
+                description: "Participe en el desarrollo de esta plataforma enfocada en la administración y gestión de salones de billard en chile."
+            },
+            {
+                id: 3,
+                logo: "/src/assets/graficasdigitales.png",
+                position: "Frontend Developer at Graficas Digitales",
+                date: "2023 - 2024",
+                description: "Participe en el desarrollo de diversos sitios webs informativos, ecommerce y personales. Utilizando tecnologias como Astro o React"
+            }
+            
+        ];
+
+        // Función para generar el HTML de cada trabajo
+        const generateJobHTML = (job) => `
+            <div class="flex flex-col p-16 max-w-6xl w-full">
+                <!-- Encabezado (Logo, Puesto y Fecha) -->
+                <div class="flex justify-between items-center w-full mb-4 gap-4">
+                    <!-- Logo -->
+                    <img src="${job.logo}" alt="Logo de ${job.position}" class="w-auto h-10">
+
+                    <!-- Puesto -->
+                    <p class="font-bold text-2xl text-white flex-1 ml-4">
+                        ${job.position}
+                    </p>
+
+                    <!-- Fecha -->
+                    <p class="text-gray-300 text-lg whitespace-nowrap">
+                        ${job.date}
+                    </p>
+                </div>
+
+                <!-- Descripción -->
+                <p class="text-gray-300 text-start">
+                    ${job.description}
+                </p>
+            </div>
+        `;
+
+        // Insertar los trabajos en el contenedor
+        const jobsContainer = document.getElementById('jobs-container');
+        jobsContainer.innerHTML = jobs.map(job => generateJobHTML(job)).join('');
+    </script>
